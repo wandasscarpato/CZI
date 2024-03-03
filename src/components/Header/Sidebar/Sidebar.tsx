@@ -1,7 +1,6 @@
 // Sidebar.tsx
 
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 
 // Importar estilos desde el archivo styles.ts
 import {
