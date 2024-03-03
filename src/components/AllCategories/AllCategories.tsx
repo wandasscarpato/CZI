@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { fetchCategoriesFromFirestore } from "../../Utils/fetchCategoriesFromFirestore";
-import { Category, Container, Imagen, Title } from "./AllCategories.styles";
+import {
+  Category as CategoryStyle,
+  Container,
+  Imagen,
+  Title,
+} from "./AllCategories.styles";
 import { useNavigate } from "react-router-dom";
 
 interface Category {
@@ -24,7 +29,7 @@ const AllCategories: React.FC<AllCategoriesProps> = ({ setCategoryId }) => {
       {categories.map((category) => {
         console.log(category);
         return (
-          <Category
+          <CategoryStyle
             onClick={() => {
               navigate(`/products?id=${category.id}`);
               setCategoryId(category.id);
@@ -35,7 +40,7 @@ const AllCategories: React.FC<AllCategoriesProps> = ({ setCategoryId }) => {
               <img src={category.imagen} alt={category.titulo} />
             </Imagen>
             <Title>| {category.titulo}</Title>
-          </Category>
+          </CategoryStyle>
         );
       })}
     </Container>
